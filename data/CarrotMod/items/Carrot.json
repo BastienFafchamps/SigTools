@@ -1,0 +1,15 @@
+{
+    "type": "SIG.Items.Item",
+    "category": "item",
+    "enabled": true,
+    "id": "SeeItGrow:Carrot",
+    "iconId": "Carrot_0",
+    "displayName": {
+        "values": []
+    },
+    "description": {
+        "values": []
+    },
+    "unstackable": true,
+    "tags": []
+}

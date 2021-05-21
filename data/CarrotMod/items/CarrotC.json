@@ -1,0 +1,7 @@
+{
+    "type": "SIG.Items.Item",
+    "category": "item",
+    "enabled": true,
+    "id": "SeeItGrow:CarrotC",
+    "iconId": "Carrot_0"
+}
