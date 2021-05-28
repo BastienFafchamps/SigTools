@@ -1,6 +1,7 @@
 from typing import Text
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QLabel, QFormLayout, QLineEdit, QTextEdit, QSpinBox
+from PyQt5.QtWidgets import QBoxLayout, QLabel, QFormLayout, QLineEdit, QTextEdit, QSpinBox
+from view.inspector_layout import InspectorLayout
 import re
 
 
@@ -11,14 +12,25 @@ class SigWidgets():
         self._widgets['string'] = self.__add_string
         self._widgets['number'] = self.__add_number
 
-    def get_widgets(self, types_data):
-        layout = QFormLayout()
+    def get_widgets(self, template):
+        layout = InspectorLayout('Inspector')
+        layout.addRow(self.__to_label('test'), QLineEdit())
+        layout.addRow(self.__to_label('testB'), QLineEdit())
 
-        for type_data in types_data:
-            if (type_data['type'] in self._widgets):
-                self._widgets[type_data['type']](layout, type_data)
-            else:
-                print(f'Type {type_data["type"]} not found')
+        layoutb = InspectorLayout(no_margins=True)
+        layoutb.addRow(self.__to_label('test'), QLineEdit())
+        layoutb.addRow(self.__to_label('test'), QLineEdit())
+        
+        layout.addRow('testB', layoutb)
+
+        return self.__get_widgets(layout, template)
+
+    def __get_widgets(self, layout, template):
+        # for key in template:
+        #     if (type_data['type'] in self._widgets):
+        #         self._widgets[type_data['type']](layout, type_data)
+        #     else:
+        #         print(f'Type {type_data["type"]} not found')
 
         return layout
 

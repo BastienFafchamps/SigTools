@@ -18,6 +18,22 @@ type_data = [
     {'type': 'string', 'name': 'testValue'},
 ]
 
+template = {
+    "type": "SIG.Items.Item",
+    "category": "item",
+    "enabled": True,
+    "id": "SeeItGrow:Carrot",
+    "iconId": "Carrot_0",
+    "displayName": {
+        "values": []
+    },
+    "description": {
+        "values": []
+    },
+    "unstackable": True,
+    "tags": []
+}
+
 class Window(QMainWindow):
 
     def __init__(self):
@@ -93,12 +109,6 @@ def window():
     win.show()
 
     # win.showMaximized()
-
-    # set stylesheet
-    # file = QFile("Eclippy.qss")
-    # file.open(QFile.ReadOnly | QFile.Text)
-    # stream = QTextStream(file)
-    # app.setStyleSheet(stream.readAll())
 
     apply_stylesheet(app, theme='dark_amber.xml')
 
